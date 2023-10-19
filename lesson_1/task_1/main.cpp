@@ -28,11 +28,21 @@ void change_arr_1(int* arr, int& elements)
 void change_arr_2(int* arr, int& elements)
 {
 	int tmp;
-	for (int low = 0, high = elements -1; low < high; low++, high--)
+	for (int i = elements -1; i >= 0; i--)
 	{
-		tmp = arr[high];
-		arr[high] = arr[low];
-		arr[low] = tmp;
+		if (i == elements -1)
+		{
+			tmp = arr[i];
+			arr[i] = arr[i - 1];
+		}
+		else if (i == 0)
+		{
+			arr[i] = tmp;
+		}
+		else
+		{
+			arr[i] = arr[i - 1];
+		}
 	}
 }
 
@@ -86,5 +96,7 @@ int main()
 		fout << arr_1[i] << " ";
 	}
 	fout.close();
+	delete[] arr_1;
+	delete[] arr_2;
 	return 0;
 }
