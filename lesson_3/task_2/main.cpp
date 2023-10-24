@@ -92,7 +92,8 @@ int main()
 		{
 			cout << "Неправильная комманда, введите еще раз." << endl;
 			continue;
-		}
-	} 
+		}		
+	}
+	delete val;
 	return 0;
 }
