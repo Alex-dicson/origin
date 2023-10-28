@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include <fstream>
 #include <cstring>
@@ -15,8 +15,8 @@ private:
 public:
 	Address()
 	{
-		city = "Москва";
-		street = "Гагарина";
+		city = "РњРѕСЃРєРІР°";
+		street = "Р“Р°РіР°СЂРёРЅР°";
 		house = 1;
 		apartment = 1;
 
