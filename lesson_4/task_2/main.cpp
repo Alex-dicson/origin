@@ -53,6 +53,7 @@ void sort(Address* addresses, int size)
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	int quantity_addresses;
 	string city;
 	string street;
