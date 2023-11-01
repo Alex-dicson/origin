@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 
 using namespace std;
 
@@ -9,7 +9,7 @@ protected:
 public:
 	Figure()
 	{
-		name = "Фигура";
+		name = "Р¤РёРіСѓСЂР°";
 	}
 	virtual void print(){}
 
@@ -30,7 +30,7 @@ public:
 		this->A = A;
 		this->B = B;
 		this->C = C;
-		name = "Треугольник";
+		name = "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 	int get_a()
 	{
@@ -59,8 +59,8 @@ public:
 	void print() override
 	{
 		cout << name << ":" << endl;
-		cout << "Стороны:" << " a=" << get_a() << " b=" << get_b() << " c=" << get_c() << endl;
-		cout << "Углы:" << " A=" << get_A() << " B=" << get_B() << " C=" << get_C() << endl;
+		cout << "РЎС‚РѕСЂРѕРЅС‹:" << " a=" << get_a() << " b=" << get_b() << " c=" << get_c() << endl;
+		cout << "РЈРіР»С‹:" << " A=" << get_A() << " B=" << get_B() << " C=" << get_C() << endl;
 	}
 
 };
@@ -68,21 +68,21 @@ public:
 class Right : public Triangle
 {
 public:
-	Right(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, 90){ name = "Прямоугольный треугольник"; }
+	Right(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, 90){ name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє"; }
 
 };
 
 class Isosceles : public Triangle
 {
 public:
-	Isosceles(int ac, int b, int AC, int B) : Triangle(ac, b, ac, AC, B, AC){ name = "Равнобедренный треугольник"; }
+	Isosceles(int ac, int b, int AC, int B) : Triangle(ac, b, ac, AC, B, AC){ name = "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє"; }
 
 };
 
 class Equilateral : public Triangle
 {
 public:
-	Equilateral(int a): Triangle(a, a, a, 60, 60, 60){ name = "Равносторонний треугольник"; }
+	Equilateral(int a): Triangle(a, a, a, 60, 60, 60){ name = "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє"; }
 
 };
 
@@ -102,7 +102,7 @@ public:
 		this->B = B;
 		this->C = C;
 		this->D = D;
-		name = "Четырехугольник";
+		name = "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє";
 	}
 	int get_a()
 	{
@@ -139,8 +139,8 @@ public:
 	void print() override
 	{
 		cout << name << ":" << endl;
-		cout << "Стороны:" << " a=" << get_a() << " b=" << get_b() << " c=" << get_c() << " d=" << get_d() << endl;
-		cout << "Углы:" << " A=" << get_A() << " B=" << get_B() << " C=" << get_C() << " D=" << get_D() << endl;
+		cout << "РЎС‚РѕСЂРѕРЅС‹:" << " a=" << get_a() << " b=" << get_b() << " c=" << get_c() << " d=" << get_d() << endl;
+		cout << "РЈРіР»С‹:" << " A=" << get_A() << " B=" << get_B() << " C=" << get_C() << " D=" << get_D() << endl;
 	}
 
 
@@ -149,14 +149,14 @@ public:
 class Parallelogram : public Quadrangle
 {
 public:
-	Parallelogram(int ac, int bd, int AC, int BD) : Quadrangle(ac, bd, ac, bd, AC, BD, AC, BD) { name = "Параллелограм"; }
+	Parallelogram(int ac, int bd, int AC, int BD) : Quadrangle(ac, bd, ac, bd, AC, BD, AC, BD) { name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°Рј"; }
 
 };
 
 class Rhomb : public Parallelogram
 {
 public:
-	Rhomb(int a, int AC, int BD) : Parallelogram(a, a, AC, BD) { name = "Параллелограм"; }
+	Rhomb(int a, int AC, int BD) : Parallelogram(a, a, AC, BD) { name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°Рј"; }
 
 
 };
@@ -164,13 +164,13 @@ public:
 class Rectangle : public  Parallelogram
 {
 public:
-	Rectangle(int ac, int bd) : Parallelogram(ac, bd, 90, 90){ name = "Параллелограм"; }
+	Rectangle(int ac, int bd) : Parallelogram(ac, bd, 90, 90){ name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°Рј"; }
 };
 
 class Sqare : public Rectangle
 {
 public:
-	Sqare(int a) : Rectangle(a, a){ name = "Параллелограм"; }
+	Sqare(int a) : Rectangle(a, a){ name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°Рј"; }
 
 };
 

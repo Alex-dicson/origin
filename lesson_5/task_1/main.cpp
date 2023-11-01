@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 
 using namespace std;
 
@@ -11,7 +11,7 @@ public:
 	Figure()
 	{
 		sides_count = 0;
-		name = "Фигура";
+		name = "Р¤РёРіСѓСЂР°";
 	}
 	int get_sides_count()
 	{
@@ -29,7 +29,7 @@ public:
 	Triangle()
 	{
 		sides_count = 3;
-		name = "Треугольник";
+		name = "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 };
@@ -40,7 +40,7 @@ public:
 	Quadrangle()
 	{
 		sides_count = 4;
-		name = "Четырёхугольник";
+		name = "Р§РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРє";
 	}
 
 
@@ -51,7 +51,7 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int in;
-	cout << "Количество сторон: ";
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ: ";
 	cin >> in;
 	if (in == 3)
 	{
