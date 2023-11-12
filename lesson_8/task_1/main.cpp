@@ -31,6 +31,7 @@ int main()
 		{
 			function(in_str, len);
 			cout << "Длина слова " << "\"" << in_str << "\" " <<  "равна " << function(in_str, len) << endl;
+			continue;
 		}
 		catch(const char* err)
 		{
