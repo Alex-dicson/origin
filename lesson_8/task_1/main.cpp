@@ -21,10 +21,10 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	string in_str;
 	int len;
+	cout << "Введите запретную длину: ";
+	cin >> len;
 	while (true)
 	{
-		cout << "Введите запретную длину: ";
-		cin >> len;
 		cout << "Введите слово: ";
 		cin >> in_str;
 		try
