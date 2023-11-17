@@ -1,0 +1,5 @@
+# ninja log v5
+2	424	7219068129740714	CMakeFiles/my_first_cmake_program.dir/main.cpp.obj	419b7c23a6837481
+425	693	7219068132264005	my_first_cmake_program.exe	b4e33f01c34ca132
+1	415	7219068829365386	CMakeFiles/my_first_cmake_program.dir/main.cpp.obj	419b7c23a6837481
+415	557	7219068830465449	my_first_cmake_program.exe	b4e33f01c34ca132
