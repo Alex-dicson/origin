@@ -1,0 +1,17 @@
+# ninja log v5
+45	760	7219089200086884	CMakeFiles/my_programm.dir/sqare.cpp.obj	3f178dd221f9d3d1
+21	764	7219089200156914	CMakeFiles/my_programm.dir/parallelogram.cpp.obj	b4c830757bfdb729
+11	766	7219089200136907	CMakeFiles/my_programm.dir/figure.cpp.obj	5b441ab3d2abdbf2
+16	767	7219089200186892	CMakeFiles/my_programm.dir/isosceles.cpp.obj	48e7f9f296354fbf
+35	770	7219089200216861	CMakeFiles/my_programm.dir/rhomb.cpp.obj	7e73f721062f2cc7
+40	776	7219089200286851	CMakeFiles/my_programm.dir/right.cpp.obj	73883d89722b57ff
+30	778	7219089200296885	CMakeFiles/my_programm.dir/rectangle.cpp.obj	dc49c590d0521abe
+2	788	7219089200416904	CMakeFiles/my_programm.dir/main.cpp.obj	17273fe171878774
+7	798	7219089200526830	CMakeFiles/my_programm.dir/equilateral.cpp.obj	f369e7c56cfbd4cd
+25	809	7219089200626846	CMakeFiles/my_programm.dir/quadrangle.cpp.obj	74e25af8e85a3440
+49	840	7219089200946814	CMakeFiles/my_programm.dir/triangle.cpp.obj	f4557ffa8572de3
+841	1458	7219089206866117	my_programm.exe	756115641500b481
+11	373	7219090031393277	CMakeFiles/my_programm.dir/rectangle.cpp.obj	dc49c590d0521abe
+17	376	7219090031413268	CMakeFiles/my_programm.dir/rhomb.cpp.obj	7e73f721062f2cc7
+22	377	7219090031423275	CMakeFiles/my_programm.dir/sqare.cpp.obj	3f178dd221f9d3d1
+377	552	7219090032801226	my_programm.exe	756115641500b481
