@@ -12,7 +12,7 @@ public:
 		numerator_ = numerator;
 		denominator_ = denominator;
 	}
-	bool operator==(Fraction& right)
+	bool operator==(const Fraction& right) const
 	{
 		if (double(numerator_ / denominator_) == double(right.numerator_ / right.denominator_))
 		{
@@ -23,7 +23,7 @@ public:
 			return false;
 		}
 	}
-	bool operator!=(Fraction& right)
+	bool operator!=(const Fraction& right) const
 	{
 		if (double(numerator_ / denominator_) != double(right.numerator_ / right.denominator_))
 		{
@@ -34,7 +34,7 @@ public:
 			return false;
 		}
 	}
-	bool operator<(Fraction& right)
+	bool operator<(const Fraction& right) const
 	{
 		if (double(numerator_ / denominator_) < double(right.numerator_ / right.denominator_))
 		{
@@ -45,9 +45,9 @@ public:
 			return false;
 		}
 	}
-	bool operator>(Fraction& right)
+	bool operator>(const Fraction& right) const
 	{
-		if (!(double(numerator_ / denominator_) < double(right.numerator_ / right.denominator_)))
+		if ((double(numerator_ / denominator_) > double(right.numerator_ / right.denominator_)))
 		{
 			return true;
 		}
@@ -56,7 +56,7 @@ public:
 			return false;
 		}
 	}
-	bool operator<=(Fraction& right)
+	bool operator<=(const Fraction& right) const
 	{
 		if (double(numerator_ / denominator_) <= double(right.numerator_ / right.denominator_))
 		{
@@ -67,7 +67,7 @@ public:
 			return false;
 		}
 	}
-	bool operator>=(Fraction& right)
+	bool operator>=(const Fraction& right) const
 	{
 		if (double(numerator_ / denominator_) >= double(right.numerator_ / right.denominator_))
 		{
@@ -82,8 +82,8 @@ public:
 
 int main()
 {
-	Fraction f1(4, 3);
-	Fraction f2(6, 11);
+	const Fraction f1(4, 3);
+	const Fraction f2(4, 3);
 
 	std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
 	std::cout << "f1" << ((f1 != f2) ? " != " : " not != ") << "f2" << '\n';

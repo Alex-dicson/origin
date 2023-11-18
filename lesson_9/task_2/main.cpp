@@ -36,11 +36,25 @@ public:
 		*this = calculation_fraction(*this, inkr, "+");
 		return *this;
 	}
-	Fraction& operator--(int)
+	Fraction& operator++(int)
+	{
+		Fraction inkr(denominator_, denominator_);
+		Fraction tmp(numerator_, denominator_);
+		*this = calculation_fraction(*this, inkr, "+");
+		return tmp;
+	}
+	Fraction& operator--()
 	{
 		Fraction dekr(denominator_, denominator_);
 		*this = calculation_fraction(*this, dekr, "-");
 		return *this;
+	}
+	Fraction& operator--(int)
+	{
+		Fraction dekr(denominator_, denominator_);
+		Fraction tmp(numerator_, denominator_);
+		*this = calculation_fraction(*this, dekr, "-");
+		return tmp;
 	}
 
 	friend Fraction calculation_fraction(Fraction left, Fraction right, string oper);
@@ -134,11 +148,11 @@ int main()
 	cout << f1 << " - " << f2 << " = " << (f1 - f2) << endl;
 	cout << f1 << " * " << f2 << " = " << (f1 * f2) << endl;
 	cout << f1 << " / " << f2 << " = " << (f1 / f2) << endl;
-	cout << "++" << f1;
-	cout << " * " << f2 << " = " << (++f1 * f2) << endl;
+	cout << "++" << f1 << " * " << f2 << " = ";
+	cout << ++f1 * f2 << endl;
 	cout << "Значение дроби 1 = " << f1 << endl;
-	cout << f1;
-	cout << "--" << " * " << f2 << " = " << f1 * f2 << endl;
-	cout << "Значение дроби 1 = " << f1-- << endl;
+	cout << f1 << "--" << " * " << f2 << " = ";
+	cout << f1-- * f2 << endl;
+	cout << "Значение дроби 1 = " << f1 << endl;
 	return 0;
 }
