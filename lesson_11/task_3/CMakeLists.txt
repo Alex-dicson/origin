@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(leaver)
+include_directories(lib)
+add_subdirectory(lib)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_executable(leaver main.cpp)
+target_link_libraries(leaver leaverDLL)

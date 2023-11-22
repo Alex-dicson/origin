@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20)
+project(figure_project)
+include_directories(lib)
+add_subdirectory(lib)
+add_executable(figure_project main.cpp)
+target_link_libraries(figure_project figure_dll)
