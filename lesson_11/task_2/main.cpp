@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "leaver.h"
+#include "lib/leaver.h"
 
 int main()
 {

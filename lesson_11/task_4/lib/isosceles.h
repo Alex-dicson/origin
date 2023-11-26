@@ -1,10 +1,6 @@
 ﻿#pragma once
 #include "triangle.h"
-#ifdef LIB_EXPORTS
-#define FIGLIB_API __declspec(dllexport)
-#else
-#define FIGLIB_API __declspec(dllimport)
-#endif // FIGLIB_EXPORTS
+#include "macros.h"
 
 class Isosceles : public Triangle
 {

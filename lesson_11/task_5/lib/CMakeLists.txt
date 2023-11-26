@@ -9,5 +9,7 @@ rectangle.cpp rectangle.h
 rhomb.cpp rhomb.h 
 right.cpp right.h 
 sqare.cpp sqare.h 
-triangle.cpp triangle.h)
+triangle.cpp triangle.h
+macros.h)
 add_library(figure_dll SHARED ${SOURCE_DLL})
+target_compile_definitions(figure_dll PRIVATE LIB_EXPORTS)

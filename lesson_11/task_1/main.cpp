@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "greeter.h"
+#include "lib/greeter.h"
 
 int main()
 {

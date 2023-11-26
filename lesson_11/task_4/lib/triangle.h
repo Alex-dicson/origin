@@ -1,12 +1,9 @@
 ﻿#pragma once
 #include <iostream>
 #include "figure.h"
+#include "macros.h"
 using namespace std;
-#ifdef LIB_EXPORTS
-#define FIGLIB_API __declspec(dllexport)
-#else
-#define FIGLIB_API __declspec(dllimport)
-#endif // FIGLIB_EXPORTS
+
 
 class Triangle : public Figure
 {

@@ -146,6 +146,7 @@
     <ClInclude Include="equilateral.h" />
     <ClInclude Include="figure.h" />
     <ClInclude Include="isosceles.h" />
+    <ClInclude Include="macros.h" />
     <ClInclude Include="parallelogram.h" />
     <ClInclude Include="quadrangle.h" />
     <ClInclude Include="rectangle.h" />

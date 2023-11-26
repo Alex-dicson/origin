@@ -1,14 +1,14 @@
 ﻿#include <iostream>
-#include "figure.h"
-#include "triangle.h"
-#include "isosceles.h"
-#include "equilateral.h"
-#include "right.h"
-#include "quadrangle.h"
-#include "rectangle.h"
-#include "sqare.h"
-#include "parallelogram.h"
-#include "rhomb.h"
+#include "lib/figure.h"
+#include "lib/triangle.h"
+#include "lib/isosceles.h"
+#include "lib/equilateral.h"
+#include "lib/right.h"
+#include "lib/quadrangle.h"
+#include "lib/rectangle.h"
+#include "lib/sqare.h"
+#include "lib/parallelogram.h"
+#include "lib/rhomb.h"
 
 using namespace std;
 
