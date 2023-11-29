@@ -354,8 +354,7 @@ int main()
 		type_race = print_type_race();		// делаем вывод на экран с типами гонки
 		wcout << L"Укажите длину дистанции (должна быть положительна): ";
 		cin >> distance;
-		//Vehicle* arr[N];	// создаем массив транспортных средст, можно было через вектор, но вектор пока не проходили
-		vector<Vehicle*> arr;
+		vector<Vehicle*> arr; // создаем массив транспортных средст
 		system("cls");
 		print_reg_start_race(arr, distance, type_race);
 	} while (repeat_race);
