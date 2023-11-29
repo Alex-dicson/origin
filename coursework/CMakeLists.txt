@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22)
+project(race)
+include_directories(lib)
+add_subdirectory(lib)
+add_executable(race main.cpp)
+find_library(SOURCE_DLL race_dll ./lib)
+target_link_libraries(race race_dll)
