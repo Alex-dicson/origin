@@ -1,0 +1,16 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <Objective-C>
+      <option name="NAMESPACE_BRACE_PLACEMENT" value="5" />
+      <option name="FUNCTION_BRACE_PLACEMENT" value="5" />
+      <option name="BLOCK_BRACE_PLACEMENT" value="5" />
+      <option name="FUNCTION_CALL_ARGUMENTS_WRAP" value="5" />
+      <option name="CLASS_CONSTRUCTOR_INIT_LIST_ALIGN_MULTILINE" value="false" />
+      <option name="SUPERCLASS_LIST_WRAP" value="0" />
+    </Objective-C>
+    <codeStyleSettings language="ObjectiveC">
+      <option name="BRACE_STYLE" value="5" />
+      <option name="CLASS_BRACE_STYLE" value="5" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>
