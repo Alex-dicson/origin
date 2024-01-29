@@ -6,7 +6,7 @@ class smart_array
 private:
     int* arr_;
     size_t size_;
-    int last_index;
+    size_t last_index;
 public:
     smart_array(size_t size) : arr_(new int[size]), size_(size)
     {
@@ -31,7 +31,7 @@ public:
         }
         
     }
-    int get_element(int index)
+    int get_element(size_t index)
     {
         if(size_ >= index)
         {
@@ -56,7 +56,7 @@ int main()
         arr.add_element(155);
         arr.add_element(14);
         arr.add_element(15);
-        std::cout << arr.get_element(1) << std::endl;
+        std::cout << arr.get_element(2) << std::endl;
     }
     catch(const std::exception& ex)
     {

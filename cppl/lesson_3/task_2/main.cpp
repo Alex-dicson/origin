@@ -6,7 +6,7 @@ class smart_array
 private:
     int* arr_;
     size_t size_;
-    int last_index;
+    size_t last_index;
 public:
     smart_array(size_t size) : arr_(new int[size]), size_(size)
     {
@@ -51,7 +51,7 @@ public:
         }
 
     }
-    int get_element(int index)
+    int get_element(size_t index)
     {
         if(size_ >= index)
         {
