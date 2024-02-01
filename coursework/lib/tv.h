@@ -6,16 +6,16 @@ using namespace std;
 
 
 //Создаем родительский класс transport vehicle
-class Vehicle
+class LIBTV_API Vehicle
 {
 protected:
 	int _type;
 	wstring _name;
 
 public:
-	LIBTV_API Vehicle();
-	LIBTV_API ~Vehicle();
-	LIBTV_API virtual wstring get_name();
-	LIBTV_API virtual double calc(int distance);
+	Vehicle();
+	~Vehicle();
+	virtual wstring get_name();
+	virtual double calc(int distance);
 
 };

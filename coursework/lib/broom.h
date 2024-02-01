@@ -2,9 +2,9 @@
 #include "air_tv.h"
 #include "macros.h"
 
-class Broom : public Air
+class LIBTV_API Broom : public Air
 {
 public:
-	LIBTV_API Broom();
-	LIBTV_API double calc(int distance) override;
+	Broom();
+	double calc(int distance) override;
 };

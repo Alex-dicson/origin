@@ -2,9 +2,9 @@
 #include "air_tv.h"
 #include "macros.h"
 
-class Carpet : public Air
+class LIBTV_API Carpet : public Air
 {
 public:
-	LIBTV_API Carpet();
-	LIBTV_API double calc(int distance) override;
+	Carpet();
+	double calc(int distance) override;
 };

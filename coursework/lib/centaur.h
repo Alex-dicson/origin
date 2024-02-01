@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include "ground_tv.h"
 
-class Centaur : public Ground
+class LIBTV_API Centaur : public Ground
 {
 public:
-	LIBTV_API Centaur();
-	LIBTV_API double calc(int distance) override;
+	Centaur();
+	double calc(int distance) override;
 };

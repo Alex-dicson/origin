@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <windows.h>
 #include <vector>
+#include <algorithm>
 #include <locale> 
 #include "lib/tv.h"
 #include "lib/ground_tv.h"
@@ -18,16 +19,30 @@ using namespace std;
 bool repeat_race = true;
 void print_reg_start_race(vector<Vehicle*>& tv, int distance, int type_race);
 
-
 // "Стартуем гонку". Производим расчеты и выводим на экран
 void start_race(vector<Vehicle*>& tv, int distance)
 {
 	int counter = 1;
 	int in_val;
+	// сортировОчка вектора
+	for (auto i = 1; i < tv.size(); i++)
+	{
+		for (auto j = 0; j < tv.size() - i; j++) 
+		{
+			if (tv[j]->calc(distance) > tv[j + 1]->calc(distance)) 
+			{
+				auto tmp = tv[j];
+				tv[j] = tv[j + 1];
+				tv[j + 1] = tmp;
+			}
+		}
+	}
+
 	wcout << L"Результаты гонки:" << endl;
 	for (auto i = 0; i < tv.size(); i++)
 	{
 		wcout << counter << L". " << tv[i]->get_name() << L". Время: " << tv[i]->calc(distance) << endl;
+		counter++;
 	}
 	wcout << endl;
 	wcout << L"1.  Провести еще одну гонку" << endl;
@@ -147,7 +162,15 @@ wstring str_list_tv(vector<Vehicle*>& tv)
 	wstring tmp;
 	for (auto i = 0; i < tv.size(); i++)
 	{
-		tmp += tv[i]->get_name() + L", ";
+		if (i < tv.size() - 1) 
+		{
+			tmp += tv[i]->get_name() + L", ";
+		}
+		else
+		{
+			tmp += tv[i]->get_name();
+		}
+		
 	}
 	return tmp;
 

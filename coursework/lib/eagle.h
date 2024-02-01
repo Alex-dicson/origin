@@ -2,9 +2,9 @@
 #include "air_tv.h"
 #include "macros.h"
 
-class Eagle : public Air
+class LIBTV_API Eagle : public Air
 {
 public:
-	LIBTV_API Eagle();
-	LIBTV_API double calc(int distance) override;
+	Eagle();
+	double calc(int distance) override;
 };

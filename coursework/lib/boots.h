@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include "ground_tv.h"
 
-class Boots : public Ground
+class LIBTV_API Boots : public Ground
 {
 public:
-	LIBTV_API Boots();
-	LIBTV_API double calc(int distance) override;
+	Boots();
+	double calc(int distance) override;
 };

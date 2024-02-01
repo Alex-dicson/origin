@@ -1,10 +1,10 @@
 ﻿#pragma once
 #include "ground_tv.h"
 
-class Camel : public Ground
+class LIBTV_API Camel : public Ground
 {
 public:
-	LIBTV_API Camel();
-	LIBTV_API double calc(int distance) override;
+	Camel();
+	double calc(int distance) override;
 
 };
