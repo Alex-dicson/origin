@@ -1,7 +1,24 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudio,clion,cmake,ninja
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,clion,cmake,ninja
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudio,cmake,ninja,intellij
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,cmake,ninja,intellij
 
-### CLion ###
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
+
+### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
@@ -80,7 +97,7 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-### CLion Patch ###
+### Intellij Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
 # *.iml
@@ -113,23 +130,6 @@ fabric.properties
 # Azure Toolkit for IntelliJ plugin
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 .idea/**/azureSettings.xml
-
-### CMake ###
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
-
-### CMake Patch ###
-# External projects
-*-prefix/
 
 ### Ninja ###
 .ninja_deps
@@ -536,4 +536,4 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudio,clion,cmake,ninja
+# End of https://www.toptal.com/developers/gitignore/api/visualstudio,cmake,ninja,intellij
