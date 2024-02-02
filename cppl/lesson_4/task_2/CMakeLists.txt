@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.20)
 project(task_2)
-
-set(CMAKE_CXX_STANDARD 17)
-
-add_executable(task_2 main.cpp lists.cpp)
+#set(CMAKE_CXX_STANDARD 17)
+#add_executable(task_1 main.cpp)
+add_subdirectory(Catch2 Catch2-build)
+add_executable(TaskTest2 test_lists.cpp lists.cpp)
+target_link_libraries(TaskTest2 PRIVATE Catch2::Catch2)
