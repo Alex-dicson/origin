@@ -16,13 +16,14 @@ string squaring (string val)
 }
 
 template<class T>
-vector<T> squaring(vector<T>& vec)
+vector<T> squaring(const vector<T>& vec)
 {
+    vector<T> temp = vec;
     for (auto i = 0; i < vec.size(); i++)
     {
-        vec[i] *= vec[i];
+        temp[i] *= temp[i];
     }
-    return vec;
+    return temp;
 }
 
 void print_vector(vector<int> vec)
@@ -45,8 +46,8 @@ int main()
     cout << "[IN]: ";
     print_vector(vec);
     cout << endl;
-    vector<int> v = squaring(vec);
     cout << "[OUT]: ";
-    print_vector(v);
+    vector<int> vec2 = squaring(vec);
+    print_vector(vec2);
     return 0;
 }

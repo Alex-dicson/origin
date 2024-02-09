@@ -2,15 +2,15 @@
 #include <vector>
 using namespace std;
 
-class Tables
+class Counter
 {
 private:
     int m_sum = 0;
     int m_count = 0;
 
 public:
-    Tables(){}
-    ~Tables(){}
+    Counter (){}
+    ~Counter (){}
     int get_count()
     {
         return m_count;
@@ -32,12 +32,12 @@ public:
 
 int main()
 {
-    Tables table;
+    Counter  table;
     vector<int> vec{4, 1, 3, 6, 25, 54};
     cout << "[IN]: ";
     for (int i: vec)
     {
-git        cout << i << " ";
+        cout << i << " ";
         table(i);
     }
     cout << endl;
