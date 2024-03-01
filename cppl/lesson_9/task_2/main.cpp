@@ -27,8 +27,12 @@ public:
 
     const big_integer& operator=(big_integer&& other) noexcept
     {
-        swap(val, other.val);
-        return *this;
+        if (this != &other)
+        {
+            swap(val, other.val);
+            return *this;
+        }
+        else{throw("error");}
     }
 
     big_integer operator+(const big_integer& other)
