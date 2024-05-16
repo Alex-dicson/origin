@@ -16,21 +16,25 @@ class Clients
 {
 public:
     Clients();
-    void AddClient(string firstname, string lastName, string email, string phone);
+    void AddClient(string firstName, string lastName, string email, string phone);
     void AddPhoneClient(string email, string phone);
     void EditClient(string email, string phone, string newFirstName, string newLastName, string newPhone);
     void DelPhone(string phone);
+    void DelClient(string email);
+    void FindClient(string firstName, string lastName, string email, string phone);
 
 private:
     void SQLCreateTables(pqxx::connection& conn);
     bool SQLExistClient(string email);
     bool SQLExistPhone(string phone);
     void SQLCreatePhone(string phone, string email);
-    void SQLCreateClient(string firstname, string lastName, string email);
+    void SQLCreateClient(string firstName, string lastName, string email);
     void SQLAddPhoneClient(string email, string phone);
     void SQLEditClient(string email, string newFirstName, string newLastName);
     void SQLEditPhone(string phone, string newPhone);
     void SQLDelPhone(string phone);
+    void SQLDelClient(string email);
+    void SQLFindClient(string firstName, string lastName, string email, string phone);
 };
 
 Clients::Clients()
@@ -189,7 +193,7 @@ void Clients::SQLEditPhone(std::string phone, std::string newPhone)
     };
 }
 
-void Clients::SQLCreateClient(std::string firstname, std::string lastName, std::string email)
+void Clients::SQLCreateClient(std::string firstName, std::string lastName, std::string email)
 {
     try
     {
@@ -199,7 +203,7 @@ void Clients::SQLCreateClient(std::string firstname, std::string lastName, std::
         string trans, trans2;
         trans =
                 "INSERT INTO clients (firstName, lastName, email) "
-                "values('" + tr.esc(firstname) + "', '" + tr.esc(lastName)+"', '"+ tr.esc(email) + "'); ";
+                "values('" + tr.esc(firstName) + "', '" + tr.esc(lastName)+"', '"+ tr.esc(email) + "'); ";
         tr.exec(trans);
         tr.commit();
     }
@@ -230,7 +234,33 @@ void Clients::SQLDelPhone(std::string phone)
 
 }
 
-void Clients::AddClient(std::string firstname, std::string lastName, std::string email, string phone)
+void Clients::SQLDelClient(std::string email)
+{
+    try
+    {
+        pqxx::connection conn(conn_str);
+
+        pqxx::work tr{conn};
+        string trans, trans2;
+        trans = "DELETE FROM phoneNumber WHERE email = '" + tr.esc(email) + "';";
+        tr.exec(trans);
+        trans2 = "DELETE FROM clients WHERE email = '" + tr.esc(email) + "';";
+        tr.exec(trans2);
+        tr.commit();
+        cout << "Client - " << email << " delete!" << endl;
+    }
+    catch (const exception& e)
+    {
+        cout << "Exception happened: " << e.what() << endl;
+    };
+
+}
+void Clients::SQLFindClient(std::string firstName, std::string lastName, std::string email, std::string phone)
+{
+
+}
+
+void Clients::AddClient(std::string firstName, std::string lastName, std::string email, string phone)
 {
     bool ExClient = Clients::SQLExistClient(email);
     if (ExClient)
@@ -241,10 +271,10 @@ void Clients::AddClient(std::string firstname, std::string lastName, std::string
         bool ExPhone = Clients::SQLExistPhone(phone);
         if (ExPhone)
         {
-            Clients::SQLCreateClient(firstname, lastName, email);
+            Clients::SQLCreateClient(firstName, lastName, email);
         } else
         {
-            Clients::SQLCreateClient(firstname, lastName, email);
+            Clients::SQLCreateClient(firstName, lastName, email);
             Clients::SQLCreatePhone(phone, email);
         }
     }
@@ -295,6 +325,24 @@ void Clients::DelPhone(std::string phone)
     }
 }
 
+void Clients::DelClient(std::string email)
+{
+    bool ExClient = Clients::SQLExistClient(email);
+
+    if(ExClient)
+    {
+        Clients::SQLDelClient(email);
+    }else
+    {
+        cout << "The client with the email - " << email << " was not found!" << endl;
+    }
+}
+
+void Clients::FindClient(std::string firstName = "", std::string lastName = "", std::string email ="", std::string phone ="")
+{
+    Clients::SQLFindClient(firstName,lastName,email,phone);
+}
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -311,9 +359,11 @@ int main()
     string newPhone = "+79000000000";
     string delPhone = "+79000000000";
     cl.AddClient(firstName, lastName, email, phone);
+    cl.AddClient("Ivanov","Ivan","empty@example.com", "+79210000000");
     cl.AddPhoneClient(email, phone2);
     cl.EditClient(email, phone, newFirstName, newLastName, newPhone);
     cl.DelPhone(delPhone);
+    cl.DelClient(email);
 
     return 0;
 }
