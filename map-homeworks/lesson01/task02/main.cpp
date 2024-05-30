@@ -54,6 +54,7 @@ calcVector::calcVector(int num)
     {
         for (int i = 0; i < 4; ++i)
         {
+            calcVector::fillVector(arrSize[i]);
             auto start = std::chrono::high_resolution_clock::now();
             thread t1(&calcVector::calcVec(), 0, arrSize[i]);
         }
