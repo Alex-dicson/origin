@@ -50,19 +50,97 @@ void calcVector::calcVec(int begin, int end)
 calcVector::calcVector(int num)
 {
     num_th = num;
-    if(num_th = 1)
+    if(num_th == 1)
     {
         for (int i = 0; i < 4; ++i)
         {
             calcVector::fillVector(arrSize[i]);
             auto start = std::chrono::high_resolution_clock::now();
-            thread t1(&calcVector::calcVec(), 0, arrSize[i]);
+            thread t1(&calcVector::calcVec, *this, 0, arrSize[i]);
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double>time = end - start;
+            cout << "\t" << time.count();
         }
+        cout << endl;
 
     }
-    else if(num_th = 2)
+    else if(num_th == 2)
     {
-
+        for (int i = 0; i < 4; ++i)
+        {
+            calcVector::fillVector(arrSize[i]);
+            auto start = std::chrono::high_resolution_clock::now();
+            thread t1(&calcVector::calcVec, *this, 0, arrSize[i] / num_th - 1);
+            thread t2(&calcVector::calcVec, *this, arrSize[i] / num_th, arrSize[i]);
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double>time = end - start;
+            cout << "\t" << time.count();
+        }
+        cout << endl;
+    }
+    else if(num_th == 4)
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            calcVector::fillVector(arrSize[i]);
+            auto start = std::chrono::high_resolution_clock::now();
+            thread t1(&calcVector::calcVec, *this, 0, arrSize[i] / 4 - 1);
+            thread t2(&calcVector::calcVec, *this, arrSize[i] / 4, (arrSize[i] / 2) -1);
+            thread t3(&calcVector::calcVec, *this, arrSize[i] / 2, (arrSize[i] / 4) - 1);
+            thread t4(&calcVector::calcVec, *this, (arrSize[i] / 2) + (arrSize[i] / 4), arrSize[i]-1);
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double>time = end - start;
+            cout << "\t" << time.count();
+        }
+        cout << endl;
+    }
+    else if(num_th == 8)
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            calcVector::fillVector(arrSize[i]);
+            auto start = std::chrono::high_resolution_clock::now();
+            thread t1(&calcVector::calcVec, *this, 0, arrSize[i] / 8 - 1);
+            thread t2(&calcVector::calcVec, *this, arrSize[i] / 8, (arrSize[i]/ 4)-1);
+            thread t3(&calcVector::calcVec, *this, arrSize[i] / 4, ((arrSize[i] / 8)+(arrSize[i] / 4)) -1);
+            thread t4(&calcVector::calcVec, *this, ((arrSize[i] / 8)+(arrSize[i]/4)), (arrSize[i] / 2) -1);
+            thread t5(&calcVector::calcVec, *this, arrSize[i] / 2, ((arrSize[i] / 2)+(arrSize[i] / 8)) -1);
+            thread t6(&calcVector::calcVec, *this, ((arrSize[i] / 2)+(arrSize[i] / 8)), ((arrSize[i] / 2)+(arrSize[i] / 4)) -1);
+            thread t7(&calcVector::calcVec, *this, ((arrSize[i] / 2)+(arrSize[i] / 4)), ((arrSize[i] / 2)+(arrSize[i] / 4) + (arrSize[i] / 8))-1);
+            thread t8(&calcVector::calcVec, *this, ((arrSize[i] / 2)+(arrSize[i] / 4) + (arrSize[i] / 8)), arrSize[i]-1);
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double>time = end - start;
+            cout << "\t" << time.count();
+        }
+        cout << endl;
+    }
+    else if(num_th == 16)
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            calcVector::fillVector(arrSize[i]);
+            auto start = std::chrono::high_resolution_clock::now();
+            thread t1(&calcVector::calcVec, *this, 0, arrSize[i] / 16 - 1);
+            thread t2(&calcVector::calcVec, *this, arrSize[i] / 16, (arrSize[i] / 8)-1);
+            thread t3(&calcVector::calcVec, *this, arrSize[i] / 8, ((arrSize[i] / 16)+(arrSize[i] / 8)) -1);
+            thread t4(&calcVector::calcVec, *this, ((arrSize[i] / 16)+(arrSize[i] / 8)), (arrSize[i] / 4) -1);
+            thread t5(&calcVector::calcVec, *this, arrSize[i] / 4, ((arrSize[i] / 4)+(arrSize[i] / 16)) -1);
+            thread t6(&calcVector::calcVec, *this, ((arrSize[i] / 4)+(arrSize[i] / 16)), ((arrSize[i] / 4)+(arrSize[i] / 8)) -1);
+            thread t7(&calcVector::calcVec, *this, ((arrSize[i] / 4)+(arrSize[i] / 8)), ((arrSize[i] / 4)+(arrSize[i] / 8))-1);
+            thread t8(&calcVector::calcVec, *this, ((arrSize[i] / 2)+(arrSize[i] / 4) + (arrSize[i] / 8)), arrSize[i]);
+            thread t9(&calcVector::calcVec, *this, arrSize[i] / 8, (arrSize[i]/ 4)-1);
+            thread t10(&calcVector::calcVec, *this, arrSize[i] / 8, (arrSize[i]/ 4)-1);
+            thread t11(&calcVector::calcVec, *this, arrSize[i] / 4, ((arrSize[i] / 8)+(arrSize[i] / 4)) -1);
+            thread t12(&calcVector::calcVec, *this, ((arrSize[i] / 8)+(arrSize[i]/4)), (arrSize[i] / 2) -1);
+            thread t13(&calcVector::calcVec, *this, arrSize[i] / 2, ((arrSize[i] / 2)+(arrSize[i] / 8)) -1);
+            thread t14(&calcVector::calcVec, *this, ((arrSize[i] / 2)+(arrSize[i] / 8)), ((arrSize[i] / 2)+(arrSize[i] / 4)) -1);
+            thread t15(&calcVector::calcVec, *this, ((arrSize[i] / 2)+(arrSize[i] / 4)), ((arrSize[i] / 2)+(arrSize[i] / 4) + (arrSize[i] / 8))-1);
+            thread t16(&calcVector::calcVec, *this, ((arrSize[i] / 2)+(arrSize[i] / 4) + (arrSize[i] / 8)), arrSize[i]);
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double>time = end - start;
+            cout << "\t" << time.count();
+        }
+        cout << endl;
     }
 }
 
